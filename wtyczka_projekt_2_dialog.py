@@ -45,52 +45,52 @@ class WtyczkaProjekt2Dialog(QtWidgets.QDialog, FORM_CLASS):
         self.pushButton_pole.clicked.connect(self.pole)
         self.pushButton_wys.clicked.connect(self.deltaH)
         
-        def pole(self):
-            # aktywna_warstwa = iface.activeLayer()
-            informacje = self.mMapLayerComboBox_layers.currentLayer().selectedFeatures()
-            if len(informacje) >= 3:
-                x20 = []
-                y20 = []
-                i = 0
-                for pkt in informacje:
-                    X = float(pkt['x2000'])
-                    Y = float(pkt['y2000'])
-                    x20.append(X)
-                    y20.append(Y)
-                sumx = []
-                rozy = []
-                for x, y in zip(x20, y20):
-                    if i>0:
-                        xi = x + xi1
-                        yi = y - yi1
-                        sumx.append(xi)
-                        rozy.append(yi)
-                    i =+1
-                    xi1 = x
-                    yi1 = y
-                iloczyn = []
-                for Xi, Yi in zip(sumx, rozy):
-                    il = Xi * Yi
-                    iloczyn.append(il)
-                pola2 = sum(iloczyn)
-                pole = pola2/2
-                self.lineEdit.setText('Pole figury pomiędzy wybranymi punktami wynosi')
-                self.label_wynik.setText(str(pole) + 'm2')
-            else:
-                self.label_wynik.setText('Liczba punktów powinna być większa od 2')
+    def pole(self):
+
+        selected_features = self.mMapLayerComboBox.currentLayer().selectedFeatures()
+        if len(selected_features) >= 3:
+            x20 = []
+            y20 = []
+            i = 0
+            for pkt in selected_features:
+                   X = float(pkt['x2000'])
+                   Y = float(pkt['y2000'])
+                   x20.append(X)
+                   y20.append(Y)
+        sumx = []
+        rozy = []
+        for x, y in zip(x20, y20):
+            if i>0:
+                xi = x + xi1
+                yi = y - yi1
+                sumx.append(xi)
+                rozy.append(yi)
+            i =+1
+            xi1 = x
+            yi1 = y
+        iloczyn = []
+        for Xi, Yi in zip(sumx, rozy):
+            il = Xi * Yi
+            iloczyn.append(il)
+        pola2 = sum(iloczyn)
+        pole = pola2/2
+        self.lineEdit.setText('Pole figury pomiędzy wybranymi punktami wynosi')
+        self.label_wynik.setText(str(pole) + 'm2')
+        # else :
+        #     self.label_wynik.setText('Liczba punktów powinna być większa od 2')
 
             
         
-        def deltaH(self):
-            selected_features = self.mMapLayerComboBox_layers.currentLayer().selectedFeatures()
-            if len(selected_features) == 2:
-                punkt1 = selected_features[0]
-                punkt2 = selected_features[1]
-                wysokosc1 = punkt1[H_PLEVRF2007NH]
-                wysokosc2 = punkt2[H_PLEVRF2007NH]
-                delta = wysokosc2 - wysokosc1
-                self.lineEdit.setText('Przewyższenie pomiędzy punktami wynosi')
-                self.label_wynik.setText(str(delta) + 'm')
+    def deltaH(self):
+        selected_features = self.mMapLayerComboBox.currentLayer().selectedFeatures()
+        if len(selected_features) == 2:
+            punkt1 = selected_features[0]
+            punkt2 = selected_features[1]
+            wysokosc1 = punkt1[H_PLEVRF2007NH]
+            wysokosc2 = punkt2[H_PLEVRF2007NH]
+            delta = wysokosc2 - wysokosc1
+            self.lineEdit.setText('Przewyższenie pomiędzy punktami wynosi')
+            self.label_wynik.setText(str(delta) + 'm')
                 
-            else:
-                self.label_wynik.setText('Liczba punktów powinna wynosić 2')
+        else :
+            self.label_wynik.setText('Liczba punktów powinna wynosić 2')
