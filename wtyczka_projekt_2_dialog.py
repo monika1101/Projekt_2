@@ -27,6 +27,7 @@ import os
 from qgis.PyQt import uic
 from qgis.PyQt import QtWidgets
 
+
 # This loads your .ui file so that PyQt can populate your plugin with the elements from Qt Designer
 FORM_CLASS, _ = uic.loadUiType(os.path.join(
     os.path.dirname(__file__), 'wtyczka_projekt_2_dialog_base.ui'))
@@ -53,31 +54,31 @@ class WtyczkaProjekt2Dialog(QtWidgets.QDialog, FORM_CLASS):
             y20 = []
             i = 0
             for pkt in selected_features:
-                   X = float(pkt['x2000'])
-                   Y = float(pkt['y2000'])
+                   X = float(pkt['X2000'])
+                   Y = float(pkt['Y2000'])
                    x20.append(X)
                    y20.append(Y)
-        sumx = []
-        rozy = []
-        for x, y in zip(x20, y20):
-            if i>0:
-                xi = x + xi1
-                yi = y - yi1
-                sumx.append(xi)
-                rozy.append(yi)
-            i =+1
-            xi1 = x
-            yi1 = y
-        iloczyn = []
-        for Xi, Yi in zip(sumx, rozy):
-            il = Xi * Yi
-            iloczyn.append(il)
-        pola2 = sum(iloczyn)
-        pole = pola2/2
-        self.lineEdit.setText('Pole figury pomiędzy wybranymi punktami wynosi')
-        self.label_wynik.setText(str(pole) + 'm2')
-        # else :
-        #     self.label_wynik.setText('Liczba punktów powinna być większa od 2')
+            sumx = []
+            rozy = []
+            for x, y in zip(x20, y20):
+                if i>0:
+                    xi = x + xi1
+                    yi = float(y) - float(yi1)
+                    sumx.append(xi)
+                    rozy.append(yi)
+                i =+1
+                xi1 = x
+                yi1 = y
+            iloczyn = []
+            for Xi, Yi in zip(sumx, rozy):
+                il = Xi * Yi
+                iloczyn.append(il)
+            pola2 = sum(iloczyn)
+            pole = pola2/2
+            self.lineEdit.setText('Pole figury pomiędzy wybranymi punktami wynosi')
+            self.label_wynik.setText(str(pole) + 'm2')
+        else:
+            self.label_wynik.setText('Liczba punktów powinna być większa od 2')
 
             
         
@@ -86,8 +87,8 @@ class WtyczkaProjekt2Dialog(QtWidgets.QDialog, FORM_CLASS):
         if len(selected_features) == 2:
             punkt1 = selected_features[0]
             punkt2 = selected_features[1]
-            wysokosc1 = punkt1[H_PLEVRF2007NH]
-            wysokosc2 = punkt2[H_PLEVRF2007NH]
+            wysokosc1 = punkt1['H_PLEVRF2007NH']
+            wysokosc2 = punkt2['H_PLEVRF2007NH']
             delta = wysokosc2 - wysokosc1
             self.lineEdit.setText('Przewyższenie pomiędzy punktami wynosi')
             self.label_wynik.setText(str(delta) + 'm')
