@@ -87,10 +87,12 @@ class WtyczkaProjekt2Dialog(QtWidgets.QDialog, FORM_CLASS):
         if len(selected_features) == 2:
             punkt1 = selected_features[0]
             punkt2 = selected_features[1]
+            nazwa1 = punkt1['NR_PUNKTU']
+            nazwa2 = punkt2['NR_PUNKTU']
             wysokosc1 = punkt1['H_PLEVRF2007NH']
             wysokosc2 = punkt2['H_PLEVRF2007NH']
             delta = wysokosc2 - wysokosc1
-            self.lineEdit.setText('Przewyższenie pomiędzy punktami wynosi')
+            self.lineEdit.setText(f'Przewyższenie pomiędzy punktami:\n {nazwa1} - {nazwa2} wynosi')
             self.label_wynik.setText(str(delta) + 'm')
                 
         else :
