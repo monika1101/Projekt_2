@@ -32,24 +32,14 @@
   <widget class="QLabel" name="label_wynik">
    <property name="geometry">
     <rect>
-     <x>50</x>
-     <y>120</y>
+     <x>40</x>
+     <y>130</y>
      <width>291</width>
      <height>41</height>
     </rect>
    </property>
    <property name="text">
     <string/>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="lineEdit">
-   <property name="geometry">
-    <rect>
-     <x>40</x>
-     <y>40</y>
-     <width>311</width>
-     <height>61</height>
-    </rect>
    </property>
   </widget>
   <widget class="QPushButton" name="pushButton_pole">
@@ -65,7 +55,7 @@
     <string>Policz pole</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_2">
+  <widget class="QPushButton" name="pushButton_wys">
    <property name="geometry">
     <rect>
      <x>200</x>
@@ -78,7 +68,34 @@
     <string>Policz różnicę wysokości</string>
    </property>
   </widget>
+  <widget class="QgsMapLayerComboBox" name="mMapLayerComboBox">
+   <property name="geometry">
+    <rect>
+     <x>120</x>
+     <y>10</y>
+     <width>160</width>
+     <height>27</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QTextEdit" name="lineEdit">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>50</y>
+     <width>371</width>
+     <height>71</height>
+    </rect>
+   </property>
+  </widget>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QgsMapLayerComboBox</class>
+   <extends>QComboBox</extends>
+   <header>qgsmaplayercombobox.h</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections>
   <connection>
