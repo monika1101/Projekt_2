@@ -63,7 +63,7 @@ class WtyczkaProjekt2Dialog(QtWidgets.QDialog, FORM_CLASS):
             for x, y in zip(x20, y20):
                 if i>0:
                     xi = x + xi1
-                    yi = float(y) - float(yi1)
+                    yi = float(yi1) - float(y)
                     sumx.append(xi)
                     rozy.append(yi)
                 i =+1
@@ -75,10 +75,10 @@ class WtyczkaProjekt2Dialog(QtWidgets.QDialog, FORM_CLASS):
                 iloczyn.append(il)
             pola2 = sum(iloczyn)
             pole = pola2/2
-            self.lineEdit.setText('Pole figury pomiędzy wybranymi punktami wynosi')
-            self.label_wynik.setText(str(pole) + 'm2')
+            self.lineEdit.setText('Pole figury pomiędzy wybranymi punktami wynosi:')
+            self.label_wynik.setText(str(pole) + ' m2')
         else:
-            self.label_wynik.setText('Liczba punktów powinna być większa od 2')
+            self.label_wynik.setText('Liczba punktów powinna być większa od 2!')
 
             
         
@@ -93,7 +93,7 @@ class WtyczkaProjekt2Dialog(QtWidgets.QDialog, FORM_CLASS):
             wysokosc2 = punkt2['H_PLEVRF2007NH']
             delta = wysokosc2 - wysokosc1
             self.lineEdit.setText(f'Przewyższenie pomiędzy punktami:\n {nazwa1} - {nazwa2} wynosi')
-            self.label_wynik.setText(str(delta) + 'm')
+            self.label_wynik.setText(str(delta) + ' m')
                 
         else :
-            self.label_wynik.setText('Liczba punktów powinna wynosić 2')
+            self.label_wynik.setText('Liczba punktów powinna wynosić 2!')
