@@ -14,14 +14,15 @@
 + Cały projekt był testowany w systemie Windows.
 
 #JAK URUCHOMIĆ WTYCZKĘ?
-  +  ... 
+  +  ... Co po kolei klikać?
+  +  W celu obliczenia przewyższenia należy wybrać tylko 2 punkty, natomiast do pola powierzchni minimum 3.
   +  Jako przykładowy plik mogą posłużyć dane osnowy wyskościowej z powiatu Ciechanowskiego: https://ciechanow.geoportal2.pl/map/geoportal/wfs.php, które trzeba zaimportować przez WFS.
  
 #JAKIE WYNIKI WYGENERUJE NAM WTYCZKA?
  + Poprawnie działająca wtyczka wyświetli wynik jako napis "Pole figury pomiędzy wybranymi punktami wynosi (...) m2" lub "Przewyższenie pomiędzy punktami wynosi (...) m".
- + W przypadku wskazania niewłaśiwej ilości punktów wyświetli się napis:
-       - pole powierzchni: "Liczba punktów powinna być większa od 2"
-       - przewyższenie: "Liczba punktów powinna wynosić 2"
++ W przypadku wskazania niewłaściwej liczby punktów wyświetli się napis:
+    - pole powierzchni: "Liczba punktów powinna być większa od 2";
+    - przewyższenie: "Liczba punktów powinna wynosić 2".
 
   #POZOSTAŁE WAŻNE INFORMACJE
   1) ...
