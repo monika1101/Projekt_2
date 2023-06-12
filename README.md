@@ -15,7 +15,7 @@
 
 #JAK URUCHOMIĆ WTYCZKĘ?
  +  Należy zainstalować zaprogramowaną wtyczkę oraz pobrać dane do obliczeń.
- +  Po pobraniu wtyczki, należy ją umieścić w folderze "plugins". Można go odnaleźć poprzez program QGIS, kolejno: "Ustawienia", "Profile użytkownika", "Otwórz katalog aktywnego profilu", "python".
+ +  Po pobraniu wtyczki, czyli folderu o nazwie "wtyczka_projekt_2", należy go umieścić w folderze "plugins". Można go odnaleźć poprzez program QGIS, kolejno: "Ustawienia", "Profile użytkownika", "Otwórz katalog aktywnego profilu", "python". To tylko przykładowa propozycja instalacji wtyczki. 
  +  Jako przykładowy plik mogą posłużyć dane osnowy wyskościowej z powiatu Ciechanowskiego: https://ciechanow.geoportal2.pl/map/geoportal/wfs.php, które trzeba zaimportować przez WFS.
  +  W celu obliczenia przewyższenia należy wybrać tylko 2 punkty, natomiast do pola powierzchni minimum 3.
  +  Należy zaznaczyć potrzebną liczbę punktów oraz wybrać wtyczkę, wyświetli się okno z opcjami obliczeń. Dostępne są przyciski "Policz pole" skutkujący wyświetleniem pola powierzchni pomiędzy wybranymi punktami oraz przycisk "Policz różnicę wysokości" liczący przyrost wysokości pomiędzy wybranymi punktami.  
@@ -27,5 +27,5 @@
     - przewyższenie: "Liczba punktów powinna wynosić 2!".
   
   #ZNANE BŁĘDY
-  1) Z zakresu pola powierzchni: Okazało się, że dla niektórych wybranych punktów wtyczka wyświetla wynik ujemny, co oczywiście jest błędną wartością, dlatego wyniki z zakresu obliczania pól powierzchni nie powinny być brane pod uwagę.
+1) Z zakresu pola powierzchni: Okazało się, że dla niektórych wybranych punktów wtyczka wyświetla wynik ujemny, co oczywiście jest błędną wartością, dlatego wyniki z zakresu obliczania pól powierzchni nie powinny być brane pod uwagę.
   
