@@ -18,8 +18,9 @@
  +  Należy zainstalować zaprogramowaną wtyczkę oraz pobrać dane do obliczeń.
  +  Po pobraniu wtyczki, czyli folderu o nazwie "wtyczka_projekt_2", należy go umieścić w folderze "plugins". Można go odnaleźć poprzez program QGIS, kolejno: "Ustawienia", "Profile użytkownika", "Otwórz katalog aktywnego profilu", "python". To tylko przykładowa propozycja instalacji wtyczki. 
  +  Jako przykładowy plik mogą posłużyć dane osnowy wyskościowej z powiatu Ciechanowskiego: https://ciechanow.geoportal2.pl/map/geoportal/wfs.php, które trzeba zaimportować przez WFS.
+ +  Po zaimportowaniu pliku należy pobrać współrzędne z geometrii punktów. Można to zrobić poprzez: "Wektor", "Narzędzia geometrii", "Dodaj atrybuty geometrii". 
  +  W celu obliczenia przewyższenia należy wybrać tylko 2 punkty, natomiast do pola powierzchni minimum 3.
- +  Należy zaznaczyć potrzebną liczbę punktów oraz wybrać wtyczkę, wyświetli się okno z opcjami obliczeń. Dostępne są przyciski "Policz pole" skutkujący wyświetleniem pola powierzchni pomiędzy wybranymi punktami oraz przycisk "Policz różnicę wysokości" liczący przyrost wysokości pomiędzy wybranymi punktami.  
+ +  Należy zaznaczyć potrzebną liczbę punktów oraz wybrać wtyczkę, wyświetli się okno z opcjami obliczeń. Dostępne są przyciski "Policz pole", skutkujący wyświetleniem pola powierzchni pomiędzy wybranymi punktami oraz przycisk "Policz różnicę wysokości" liczący przyrost wysokości pomiędzy wybranymi punktami. W przypadku policzenia pola powierzchni, należy wybrać warstwę z pobranymi wcześniej współrzędnymi.
 
 #JAKIE WYNIKI WYGENERUJE NAM WTYCZKA?
  + Poprawnie działająca wtyczka wyświetli wynik jako napis "Pole figury pomiędzy wybranymi punktami wynosi (...) m2" lub "Przewyższenie pomiędzy punktami wynosi (...) m".
