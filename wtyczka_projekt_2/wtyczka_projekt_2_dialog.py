@@ -54,20 +54,20 @@ class WtyczkaProjekt2Dialog(QtWidgets.QDialog, FORM_CLASS):
             y20 = []
             i = 0
             for pkt in selected_features:
-                   X = float(pkt['X2000'])
-                   Y = float(pkt['Y2000'])
+                   X = float(pkt['xcoord'])
+                   Y = float(pkt['ycoord'])
                    x20.append(X)
                    y20.append(Y)
             sumx = []
             rozy = []
             pierwx = x20[0] + x20[-1]
-            pierwy = y20[0] - y20[-1]
+            pierwy = y20[-1] - y20[0]
             sumx.append(pierwx)
             rozy.append(pierwy)
             for x, y in zip(x20, y20):
                 if i>0:
                     xi = x + xi1
-                    yi = float(yi1) - float(y)
+                    yi = float(y) - float(yi1)
                     sumx.append(xi)
                     rozy.append(yi)
                 i =+1
@@ -81,6 +81,7 @@ class WtyczkaProjekt2Dialog(QtWidgets.QDialog, FORM_CLASS):
             pole = pola2/2
             self.lineEdit.setText('Pole figury pomiędzy wybranymi punktami wynosi:')
             self.label_wynik.setText(str(round(pole, 5)) + ' m2')
+
         else:
             self.label_wynik.setText('Liczba punktów powinna być większa od 2!')
 
