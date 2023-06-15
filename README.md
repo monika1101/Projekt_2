@@ -5,12 +5,13 @@
     - rożnicę wysokości pomiędzy dwoma wskazanymi punktami;
     - pole powierzchni (metodą Gaussa) pomiędzy wskazanymi punktami;
 + Program przelicza różnicę wysokości w układzie PL-EVRF2007-NH.
-+ Współrzędne do obliczenia pola powierzchni powinny być w układzie PL-2000.
++ Współrzędne do obliczenia pola powierzchni powinny być pobrane z geometrii punktów.
 + Pole powierzchni podane jest w metrach kwadratowych, a przewyższenie w metrach.
 
 #CO JEST POTRZEBNE, ABY WTYCZKA ZADZIAŁAŁA?
 + Do poprawnego działania wtyczki potrzebny jest program QGIS w wersji przynajmnniej 3.0.
-+ Aby skorzystać z programu potrzebny jest dowolny plik z danymi zawierającymi atrybuty H i XY z układów "PL-EVRF2007-NH" i PL-2000, np. warstwa osnowy wysokościowej.
++ Aby skorzystać z programu potrzebny jest dowolny plik z danymi zawierającymi atrybuty H z układu "PL-EVRF2007-NH", np. warstwa osnowy wysokościowej.
++ Współrzędne punktów pobrane z geometrii punktów.
 + Cały projekt był testowany w systemie Windows.
 
 #JAK URUCHOMIĆ WTYCZKĘ?
