@@ -47,23 +47,19 @@ class WtyczkaProjekt2Dialog(QtWidgets.QDialog, FORM_CLASS):
         self.pushButton_wys.clicked.connect(self.deltaH)
         
     def pole(self):
-
         selected_features = self.mMapLayerComboBox.currentLayer().selectedFeatures()
         if len(selected_features) >= 3:
             x20 = []
             y20 = []
             i = 0
-            for pkt in selected_features:
-                   X = float(pkt['xcoord'])
-                   Y = float(pkt['ycoord'])
-                   x20.append(X)
-                   y20.append(Y)
+            for element in selected_features:
+                punkty = element.geometry().asPoint()
+                x = punkty.x()
+                y = punkty.y()
+                x20.append(x)
+                y20.append(y)
             sumx = []
             rozy = []
-            pierwx = x20[0] + x20[-1]
-            pierwy = y20[-1] - y20[0]
-            sumx.append(pierwx)
-            rozy.append(pierwy)
             for x, y in zip(x20, y20):
                 if i>0:
                     xi = x + xi1
@@ -73,6 +69,10 @@ class WtyczkaProjekt2Dialog(QtWidgets.QDialog, FORM_CLASS):
                 i =+1
                 xi1 = x
                 yi1 = y
+            pierwx = x20[0] + x20[-1]
+            pierwy = y20[0] - y20[-1]
+            sumx.append(pierwx)
+            rozy.append(pierwy)
             iloczyn = []
             for Xi, Yi in zip(sumx, rozy):
                 il = Xi * Yi
